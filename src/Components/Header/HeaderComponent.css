@@ -1,0 +1,22 @@
+.header_flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
+    height: 5rem;
+    background-color: #ff277f;
+    width: 100%;
+}
+
+.header_flexbox-element {
+    flex: 1;
+    justify-self: center;
+    align-items: center;
+}
+
+.flexbox-son1 {
+    justify-self: center;
+}
+
+.flexbox-son2 {
+    justify-self: flex-end;
+}
