@@ -1,0 +1,77 @@
+/* DataTable.css */
+
+.table-responsive {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center; /* Centramos la tabla horizontalmente */
+  }
+  
+  .data-table {
+    width: 80%; /* Reducimos el ancho de la tabla al 80% de su contenedor */
+    max-width: 1000px; /* Establecemos un ancho máximo para evitar que la tabla sea demasiado grande */
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .data-table thead tr {
+    background-color: #ff277f; /* Nuevo color para el encabezado */
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 12px 15px;
+  }
+  
+  .data-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  /* Eliminamos el estilo de las filas pares ya que no queremos un color de fondo */
+  /*.data-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }*/
+  
+  .data-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff277f; /* Usamos el color del encabezado para la última fila también */
+  }
+  
+  .data-table tbody tr.active-row {
+    font-weight: bold;
+    color: #ff277f;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .data-table thead {
+      display: none;
+    }
+  
+    .data-table tbody tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: none;
+    }
+  
+    .data-table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+  
+    .data-table td:last-child {
+      border-bottom: 0;
+    }
+  
+    .data-table td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    .data-table td:last-child {
+      border-bottom: 0;
+    }
+  }
