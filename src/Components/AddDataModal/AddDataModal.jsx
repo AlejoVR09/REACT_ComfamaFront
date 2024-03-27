@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./AddDataModal.css";
 
 const AddDataModal = ({ onSave, onClose }) => {
-  // Efecto para agregar el event listener
   useEffect(() => {
     const closeOnEscapeKeyDown = (e) => {
       console.log("enter here", e);
@@ -11,14 +10,12 @@ const AddDataModal = ({ onSave, onClose }) => {
       }
     };
 
-    // Agrega el event listener
     document.body.addEventListener("keydown", closeOnEscapeKeyDown);
 
-    // Limpia el event listener
     return () => {
       document.body.removeEventListener("keydown", closeOnEscapeKeyDown);
     };
-  }, [onClose]); // Asegúrate de que el efecto se ejecute nuevamente si la función onClose cambia
+  }, [onClose]); 
 
   const [formData, setFormData] = useState({
     nombre: "",

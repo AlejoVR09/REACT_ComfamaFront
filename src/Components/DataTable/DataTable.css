@@ -75,3 +75,40 @@
       border-bottom: 0;
     }
   }
+  .data-table button {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #5c5c5c;
+    border: 1px solid #dddddd;
+    padding: 6px 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .data-table button:hover {
+    background-color: #5c5c5c;
+    color: #ffffff;
+  }
+  
+  /* Estilos específicos para el botón de actualizar */
+  .data-table button.update-btn {
+    border-color: #3097D1;
+    color: #3097D1;
+  }
+  
+  .data-table button.update-btn:hover {
+    background-color: #3097D1;
+    color: #ffffff;
+  }
+  
+  /* Estilos específicos para el botón de eliminar */
+  .data-table button.delete-btn {
+    border-color: #E74C3C;
+    color: #E74C3C;
+  }
+  
+  .data-table button.delete-btn:hover {
+    background-color: #E74C3C;
+    color: #ffffff;
+  }
