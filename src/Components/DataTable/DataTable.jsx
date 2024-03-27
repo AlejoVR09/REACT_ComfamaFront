@@ -7,21 +7,21 @@ const DataTable = ({ data }) => {
       <table className="data-table">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Dirección</th>
-            <th>Descripción</th>
-            <th>Mensaje</th>
+            <th>Nombre Propuesta</th>
+            <th>Fecha</th>
+            <th>Descripcion</th>
+            <th>Valor</th>
+            <th>Beneficiados</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td>{item.nombre}</td>
-              <td>{item.correo}</td>
-              <td>{item.direccion}</td>
-              <td>{item.descripcion}</td>
-              <td>{item.mensaje}</td>
+              <td>{item.proposalName}</td>
+              <td>{item.presentation}</td>
+              <td>{item.proposalDescription}</td>
+              <td>{item.valueProposal + "$"}</td>
+              <td>{item.benefited}</td>
             </tr>
           ))}
         </tbody>

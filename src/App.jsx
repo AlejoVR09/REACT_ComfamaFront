@@ -8,42 +8,16 @@ import TableManager from './Components/TableManager/TableManager';
 import { useState } from 'react'
 
 
-const apiData = fetchData("http://localhost:8080/api/v1/document");
+const apiData = fetchData("http://localhost:8080/api/v1/proposalDefinition");
 function App() {  
-  const usersData = [
-  {
-    nombre: 'Juan Perez',
-    correo: 'juanperez@example.com',
-    direccion: '123 Main St, Ciudad, País',
-    descripcion: 'Cliente frecuente',
-    mensaje: 'Ningún mensaje por el momento.'
-  },
-  {
-    nombre: 'Juan Perez',
-    correo: 'juanperez@example.com',
-    direccion: '123 Main St, Ciudad, País',
-    descripcion: 'Cliente frecuente',
-    mensaje: 'Ningún mensaje por el momento.'
-  },
-  {
-    nombre: 'Juan Perez',
-    correo: 'juanperez@example.com',
-    direccion: '123 Main St, Ciudad, País',
-    descripcion: 'Cliente frecuente',
-    mensaje: 'Ningún mensaje por el momento.'
-  },
-];
-
-const addData = (newData) => {
-  setUsersData([...usersData, newData]);
-};
   const data = apiData.read();
+  console.log(data)
   return (
     <>
       <div className="App">
         <HeaderComponent/>
-        <TableManager onAddData={addData} />
-        <DataTable data = {usersData}></DataTable>
+        <TableManager onAddData={data} />
+        <DataTable data = {data}></DataTable>
         <FooterComponent/>
       </div>
     </>

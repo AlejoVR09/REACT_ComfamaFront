@@ -22,11 +22,14 @@ const AddDataModal = ({ onSave, onClose }) => {
 
   const [formData, setFormData] = useState({
     nombre: "",
-    correo: "",
-    direccion: "",
+    fecha: "",
+    descripcionPropuesta: "",
+    descripcionActivities: "",
     descripcion: "",
-    mensaje: "",
+    proponent: "",
+    benefited: "",
     seleccion: '',
+    valor: 0
   });
 
   const handleChange = (e) => {
@@ -45,7 +48,7 @@ const AddDataModal = ({ onSave, onClose }) => {
         <form onSubmit={handleSubmit}>
           <h2>Agregar Datos</h2>
           <label>
-            Nombre:
+            Nombre de la propuesta:
             <input
               type="text"
               name="nombre"
@@ -55,51 +58,60 @@ const AddDataModal = ({ onSave, onClose }) => {
             />
           </label>
           <label>
-            Correo:
+            Fecha de inicio del evento:
             <input
-              type="email"
-              name="correo"
-              value={formData.correo}
+              type="date"
+              name="fecha"
+              value={formData.fecha}
               onChange={handleChange}
               required
             />
           </label>
           <label>
-            Dirección:
-            <input
-              type="text"
-              name="direccion"
-              value={formData.direccion}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label>
-            Descripción:
+            Descripción de la propuesta:
             <textarea
-              name="descripcion"
-              value={formData.descripcion}
+              name="descripcionPropuesta"
+              value={formData.descripcionPropuesta}
               onChange={handleChange}
               required
             />
           </label>
           <label>
-            Mensaje:
+            Descripción de las actividades:
             <textarea
-              name="mensaje"
-              value={formData.mensaje}
+              name="descripcionActivities"
+              value={formData.descripcionActivities}
               onChange={handleChange}
               required
             />
           </label>
           <label>
-            Seleccion:
-            <select name="seleccion" value={formData.seleccion} onChange={handleChange} required>
+            Beneficiados:
+            <select name="benefited" value={formData.benefited} onChange={handleChange} required>
               <option value="">Seleccione una opción</option>
               <option value="opcion1">Opción 1</option>
               <option value="opcion2">Opción 2</option>
               <option value="opcion3">Opción 3</option>
             </select>
+          </label>
+          <label>
+            Proponente:
+            <select name="proponent" value={formData.proponent} onChange={handleChange} required>
+              <option value="">Seleccione una opción</option>
+              <option value="opcion1">Opción 1</option>
+              <option value="opcion2">Opción 2</option>
+              <option value="opcion3">Opción 3</option>
+            </select>
+          </label>
+          <label>
+            Valor de la propuesta:
+            <input
+              type="number"
+              name="valor"
+              value={formData.valor}
+              onChange={handleChange}
+              required
+            />
           </label>
           <div className="modal-actions">
             <button type="button" onClick={onClose}>
